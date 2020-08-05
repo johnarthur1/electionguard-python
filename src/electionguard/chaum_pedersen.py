@@ -44,7 +44,7 @@ class DisjunctiveChaumPedersenProof(Proof):
     """proof_zero_response in the spec"""
     proof_one_response: ElementModQ
     """proof_one_response in the spec"""
-    usage: ProofUsage = ProofUsage.SelectionValue
+    usage: str = ProofUsage.SelectionValue.value
     """a description of how to use this proof"""
 
     def __post_init__(self) -> None:
@@ -150,7 +150,7 @@ class ChaumPedersenProof(Proof):
     """c in the spec"""
     response: ElementModQ
     """v in the spec"""
-    usage: ProofUsage = ProofUsage.SecretValue
+    usage: str = ProofUsage.SecretValue.value
     """a description of how to use this proof"""
 
     def __post_init__(self) -> None:
@@ -269,7 +269,7 @@ class ConstantChaumPedersenProof(Proof):
     "v in the spec"
     constant: int
     """constant value"""
-    usage: ProofUsage = ProofUsage.SelectionLimit
+    usage: str = ProofUsage.SelectionLimit.value
     """a description of how to use this proof"""
 
     def __post_init__(self) -> None:

@@ -28,7 +28,7 @@ class SchnorrProof(Proof):
     """c in the spec"""
     response: ElementModQ
     """u in the spec"""
-    usage: ProofUsage = ProofUsage.SecretValue
+    usage: str = ProofUsage.SecretValue.value
 
     def __post_init__(self) -> None:
         super().__init__()
