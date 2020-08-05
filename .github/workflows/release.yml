@@ -3,6 +3,9 @@ name: Release Build
 on:
   milestone:
     types: [closed]
+  pull_request:
+    branches:
+      - main
 
 env:
   PYTHON_VERSION: 3.8
@@ -146,6 +149,6 @@ jobs:
       - name: Deploy Github Pages
         run: make docs-deploy-ci
       - name: Upload Package to PyPi
-        run: make package-upload-ci
+        run: make package-upload-test-ci
       - name: Validate Import
         run: make package-validate
